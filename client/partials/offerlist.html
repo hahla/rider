@@ -1,0 +1,27 @@
+<offerlist>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <th>id</th>
+      <th>Mesage</th>
+      <th>Starting at</th>
+      <th>Going to</th>
+      <th>Leaving in</th>
+    </thead>
+
+    <tr ng-repeat="offer in offers" ng-click="select($index)">
+      <td>{{offer.id}}</td>
+      <td>{{offer.message}}</td>
+      <td>{{offer.start}}</td>
+      <td>{{offer.going}}</td>
+      <td>{{offer.leaving}}</td> 
+    </tr>
+  </table>
+
+  <div class="pagination center">
+    <ul>
+      <li ng-repeat="n in [1,pageCount] | range">
+        <a href="#" ng-click="loadPage(n)">{{n}}</a>
+      </li>
+    </ul>
+  </div>
+</offerlist>

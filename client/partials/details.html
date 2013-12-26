@@ -1,0 +1,14 @@
+<h2>{{action}} Trip Offer</h2>
+
+<form ng-model="offer" name="offerform" class="form-horizontal">
+  <formfield prop="Message" ng-model="offer.message"></formfield>
+  <formfield prop="Start at" ng-model="offer.start"></formfield>
+  <formfield prop="Going to '<lat>, <lng>'" ng-model="offer.going"></formfield>
+  <formfield prop="Leaving in" ng-model="offer.leaving"></formfield>
+  <div class="form-actions">
+    <button ng-click="save()" class="btn btn-primary">
+      {{action}}
+    </button>
+    <a href="/" class="btn">Cancel</a>
+  </div>
+</form>

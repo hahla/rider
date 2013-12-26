@@ -1,0 +1,17 @@
+*.pyc
+*.pyo
+*.bin
+conf/.pid
+lextab.*
+oql_parsetab.*
+
+assets
+assets/*/*
+node_modules
+node_modules/*/*
+
+log
+store
+tmp
+bower_components
+vendor

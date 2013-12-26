@@ -1,0 +1,197 @@
+@red-lt:   #121;
+@red-md:   #232;
+@red-dk:   #343;
+@green-lt: #454;
+@green-md: #565;
+@green-dk: #676;
+@blue-lt:  #787;
+@blue-md:  #898;
+@blue-dk:  #909;
+@flag-base: #380f21;
+@flag-yellow: #feac1c;
+@flag-indigo: #40dfa5;
+@flag-purp: #e10447;
+@flagedge: 100px;
+@1colMaxWidth: 480px;
+@2colmax: 700px;
+@navwidth: 220px;
+ol, ul { list-style: none; }
+* { margin: 0px; padding: 0px; }
+.galaxy { background: url("/public/img/img1.jpg"); }
+body { background: @flag-yellow; }
+p { margin-bottom: 0 }
+p + p { text-indent: 1.5em; margin-top: 0; }
+#main {
+	z-index: 0;
+	white-space: nowrap;
+	padding: 0px;
+	position: relative;
+}
+
+#nav {
+	.fl;
+	width: @navwidth;
+	padding: 20px;
+ 	li.tine {
+		background: @flag-yellow;
+		border-bottom: @flagedge solid @flag-purp;
+		border-left: @flagedge solid transparent;
+	}
+	li.yoga {
+		background: @flag-indigo;
+		border-bottom: @flagedge solid @flag-yellow;
+		border-right: @flagedge solid transparent;
+	}
+	li.model{
+		background: @flag-indigo;
+		border-top: @flagedge solid @flag-yellow;
+		border-left: @flagedge solid transparent;
+	}
+	li.contact {
+		background: @flag-yellow;
+		border-top: @flagedge solid @flag-purp;
+		border-right: @flagedge solid transparent;
+	}
+}
+#core {
+	width: calc(~"100% - 240px");
+	padding: 40px 0px 0px 0px;
+	float: left;
+	.content {
+		white-space: normal;
+	}
+}
+
+#tine {
+	height: 700px;
+	width: auto;
+}
+.clear { clear: both;}
+.center { 
+	text-align: center; margin-right: auto; margin-left: auto;
+}
+.imgfluid {
+	max-width:  100%; 
+	max-height: 100%;
+}
+.fb-like {
+	float: left;
+}
+#yoga p { 
+	/*font-style: normal;
+	font-family: 'Tangerine';
+	font-size: 1.5em;*/
+	font: normal lighter 1.5em/110% 'Tangerine';
+}
+/** small size 1 column */
+@media   (max-width: (@navwidth + @2colmax)) {
+	body {background: @flag-yellow;}
+	color: @flag-yellow;
+	#nav { 
+		@flagedge: 55px;
+		ul { margin: 0px; padding: 0px;}
+		width: @1colMaxWidth;
+		padding: 10px;
+		.smallli {
+			float: left; 
+			display: inline; 
+			border: 0 none; 
+			padding: 0px; 
+			margin: 0px;
+		}
+		li.tine { 
+			.smallli;
+			background: @flag-indigo;
+			border-bottom: @flagedge solid @flag-yellow;
+			border-left: @flagedge solid transparent;
+		}
+		li.yoga { 
+			.smallli;
+			background: @flag-indigo; display:inline;
+			border-bottom: @flagedge solid @flag-yellow;
+			border-right: @flagedge solid transparent;
+		}
+		li.model{
+			.smallli;
+			background: @flag-indigo; display:inline;
+			border-top: @flagedge solid @flag-yellow;
+			border-left: @flagedge solid transparent;
+		}
+		li.contact {
+			.smallli;
+			background: @flag-indigo; display:inline;
+			border-top: @flagedge solid @flag-yellow;
+			border-right: @flagedge solid transparent;
+		}
+	}
+	#core {
+		width: @1colMaxWidth; 
+		padding: 10px;
+	}
+	.largecaption {
+		font: normal normal lighter 1em helvetica;
+		background-color: rgba(0, 12,0,.8);
+		width: 100%;
+		color: @flag-yellow;
+	}
+}
+
+
+/** large layout */
+@media (min-width: (@navwidth + @2colmax + 1)) {
+	#core {
+		width: @2colmax;
+	}
+	.largecaption {
+		background-color: rgba(0, 12,0,.8);
+		width: auto; 
+		font: normal normal lighter 1.4em helvetica; 
+		color: @flag-yellow;
+	}
+}
+.fit {
+	overflow: auto;
+	white-space: normal;
+}
+.fl {
+	float: left;
+}
+.hide {
+	visibility: hidden; display: none;
+}
+.largecaption {
+	background-color: rgba(0, 12,0,.8);
+	padding: 5px;
+}
+.caption {
+    background-color: rgba(0,12,0,0.8);  
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    top: 279px;
+    left: 666px;
+    text-align: center;
+    padding: 15px;
+    color: @flag-indigo;
+}
+
+@-webkit-keyframes loadinganim {
+  0%  { max-height: 0; }
+  50% { max-height: 100%; top: 0%; background: darken(@flag-purp, 10%); opacity: .5;}
+  100% { max-height: 0; top: 100%; z-index: -1;} 
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  background: @flag-yellow;
+  position: absolute;
+  top: 5px;
+  z-index: -5;
+  margin: 20px;
+}
+.fall { 
+  z-index: 5;
+  -webkit-animation: loadinganim 3s linear forwards 0.5s; top: -50px;
+}
+

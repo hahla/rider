@@ -1,0 +1,58 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Ride Share</title>
+
+<link rel="stylesheet" href="/vendor/bootstrap-2.3.1/css/bootstrap.css" media="screen">
+<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+<link rel="stylesheet" href="/css/style.css" media="screen"/>
+
+
+<script src="/reload/reload.js"></script>
+
+<script src="/vendor/angularjs-1.0.5/angular.min.js"></script>
+<script src="/vendor/angularjs-1.0.5/angular-resource.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controllers.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-utils/modules/event/event.js "></script>
+<script type="text/javascript" src="bower_components/angular-ui-map/src/map.js"></script>
+<script type="text/javascript">
+	var onGoogleReady = function() {
+		console.log("gooready");
+	    // angular.bootstrap(document.getElementById("map"), ['offerApp.ui-map']);
+	    var opts = { 
+	    	zoom: 8,
+	    	center: new google.maps.LatLng(-34.397, 150.644)
+	    }
+	  	var map = new google.maps.Map(document.getElementById('map-canvas'), opts);
+	};
+
+	function loadGoogleMaps() {
+		console.log("loadgoo");
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" +  
+			"callback=onGoogleReady"
+		document.body.appendChild(script);
+		console.log(script);
+	}
+	//document.onLoad = loadGoogleMaps;
+</script>
+<body>
+<div class="jumbotron">
+  <h1>share a cab</h1>
+  <p>ok if someone tags along? get there just as quick, for less</p>
+  <a href="whatever" class="button">lets go! </a> > 
+  <a href="whatever" class="button button2">hmm, not sure?</a>
+
+<!--   <div id="map-canvas" style="height:400px; margin:0px; padding:0px; display: true"></div>
+ --></div>
+<div ng-app="offerApp" class="containr">
+  <div ng-view>
+    <!-- partial will go here -->
+  </div>
+</div>
+
+
+
+

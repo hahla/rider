@@ -1,0 +1,38 @@
+<!doctype html>
+<head>
+<script type=text/javascript>
+var NAME = {};
+var namer = function(args, as) { 
+	console.log("in here:"+args);
+	eval.call(this, args);
+	console.log("fail?"); 
+	if (as) {
+		eval.call(this, as);
+	}
+};
+
+function $import(script) {
+	NAME[script] = script;
+	namer(script);
+
+	return {
+		as: function (asname) {
+			namer(script, asname);
+			NAME[script+":"+asname] = script;
+		}
+	}
+}
+
+function ClassyCat() {
+	return {
+		init: function(varargs) {},
+		pubthis: function(varargs) {},
+		_privthat: function(varags){}
+	}
+
+}
+</script>
+</head>
+<body>
+<p>hi there</p>
+</body>

@@ -1,0 +1,40 @@
+/*@red-lt:   #121;
+@red-md:   #232;
+@red-dk:   #343;
+@green-lt: #454;
+@green-md: #565;
+@green-dk: #676;
+@blue-lt:  #787;
+@blue-md:  #898;
+@blue-dk:  #909;
+@flag-base: #380f21;
+@flag-yellow: #feac1c;
+@flag-indigo: #40dfa5;
+@flag-purp: #e10447;*/
+
+body {
+  padding: 20px;
+  background: #40dfa5;
+}
+
+.jumbotron {
+	background: #feac1c;
+	height:10%;
+	padding: 10px 30px ;
+}
+button {
+  width: 100px;
+}
+.button2 {
+	color: #e10447;
+}
+
+a.btn {
+  width: 100px;
+}
+
+.map-canvas { 
+	height: 400px; 
+	width: 400px; 
+}
+
