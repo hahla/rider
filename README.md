@@ -14,6 +14,6 @@ you'll need to know how to run couchcbase and init the db with sampledata. there
 to run server
 ./supervisor --debug server.js
 
-then hit that shit
+
 
 
